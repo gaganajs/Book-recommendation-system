@@ -1,12 +1,11 @@
 
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
-# Load model files
-book_pivot = pickle.load(open('book_pivot.pkl', 'rb'))
-similarity_scores = pickle.load(open('similarity_scores.pkl', 'rb'))
-books = pickle.load(open('books.pkl', 'rb'))
+book_pivot = joblib.load("book_pivot.pkl")
+similarity_scores = joblib.load("similarity_scores.pkl")
+books = joblib.load("books.pkl")
 
 # Recommendation function
 def recommend(book_name):
